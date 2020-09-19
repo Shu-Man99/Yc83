@@ -122,7 +122,7 @@ var page = 1;
 $(function(){
 	var ias = jQuery.ias({
 		// 动态加载内容的容器标签, 放置 article 的容器
-		container : '#focusslide',
+		container : '.content',
 		// 动态加载项目 ==> 每个文章的标签 : article
 		item : '.post',
 		// 分页标签
