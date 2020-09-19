@@ -35,6 +35,7 @@ public class Result {
 	}
 	public Result(String msg) {
 		super();
+		this.code = 0;
 		this.msg = msg;
 	}
 }

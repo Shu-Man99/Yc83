@@ -24,6 +24,11 @@
 <!--[if lt IE 9]>
   <script>window.location.href='upgrade-browser.html';</script>
 <![endif]-->
+<style type="text/css">
+.e{
+	color:red
+}
+</style>
 </head>
 
 <body class="user-select single">
@@ -33,13 +38,20 @@
   <div class="content-wrap">
     <div class="content">
     	<form action="reg.do" method="post">
-    		账号: <input name="account"><br>
-    		昵称: <input name="name"><br>
-    		密码: <input name="pwd"><br>
-    		邮箱: <input name="email"><br>
-    		...其他字段,请自行扩展...<br>
+    		账号: <input name="account" th:value="${user}!=null ? ${user.account} : ''">
+    		<span class="e" th:if="${errors}!=null" th:text="${errors.get('account')}"></span><br>
+    		
+    		昵称: <input name="name" th:value="${user}!=null ? ${user.name} : ''">
+    		<span class="e" th:if="${errors}!=null" th:text="${errors.get('name')}"></span><br>
+    		
+    		密码: <input name="pwd" th:value="${user}!=null ? ${user.pwd} : ''">
+    		<span class="e" th:if="${errors}!=null" th:text="${errors.get('pwd')}"></span><br>
+    		
+    		邮箱: <input name="email" th:value="${user}!=null ? ${user.email} : ''">
+    		<span class="e" th:if="${errors}!=null" th:text="${errors.get('email')}"></span><br>
+    		
+    		手机号: <input name="phone" th:value="${user}!=null ? ${user.phone} : ''"><br>
     		<button>注册</button>
-    		<span th:text="${errors.toString()}"></span>
     	</form>
     </div>
   </div>
@@ -107,7 +119,7 @@
 </section>
 <footer class="footer" th:replace="index::.footer">
 </footer>
-<div id="last" th:replace="index::#last">
+<div id="last" th:replace="index::.last">
 </div>
 </body>
 </html>

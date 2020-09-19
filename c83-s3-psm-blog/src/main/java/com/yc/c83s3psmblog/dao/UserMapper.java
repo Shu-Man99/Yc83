@@ -9,7 +9,7 @@ public interface UserMapper {
 	
 	@Insert("insert into user values (null,"
 			+ "#{name},#{account},#{pwd},#{phone},#{email},"
-			+ "#{head},now(),#{status},#{type}")
+			+ "#{head},now(),#{status},#{type})")
 	public int insert(User user);
 	
 	@Select("select * from user where account=#{account} and pwd=#{pwd}")

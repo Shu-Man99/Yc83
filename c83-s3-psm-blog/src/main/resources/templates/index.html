@@ -43,7 +43,9 @@
             </ul>
           </li>
         </ul>
-        <a data-toggle="modal" data-target="#loginModal" class="login" rel="nofollow">Hi,请登录</a>&nbsp;&nbsp;<a href="javascript:;" class="register" rel="nofollow">我要注册</a>&nbsp;&nbsp;<a href="" rel="nofollow">找回密码</a> </div>
+        <a data-toggle="modal" data-target="#loginModal" class="login" rel="nofollow">Hi,请登录</a>&nbsp;&nbsp;
+        <a href="toreg" class="register" rel="nofollow">我要注册</a>&nbsp;&nbsp;
+        <a href="" rel="nofollow">找回密码</a> </div>
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-navbar" aria-expanded="false"> <span class="sr-only"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
         <h1 class="logo hvr-bounce-in"><a href="" title=""><img src="images/logo.png" alt=""></a></h1>
@@ -115,7 +117,7 @@
           <a class="comment" href="article.html#comment"><i class="glyphicon glyphicon-comment"></i> 
           0个不明物体</a>
          </p>
-        <p class="note" th:text="${a.content.substring(0,50)}">可以用strtotime()把日期（$date）转成时间戳，再用date()按需要验证的格式转成一个日期，来跟$date比较是否相同来验证这个日期的格式是否是正确的。所以要验证日期格式 ... </p>
+        <p class="note" th:utext="${a.content.substring(0,50)}">可以用strtotime()把日期（$date）转成时间戳，再用date()按需要验证的格式转成一个日期，来跟$date比较是否相同来验证这个日期的格式是否是正确的。所以要验证日期格式 ... </p>
       </article>
       
       <div id="pagination">
