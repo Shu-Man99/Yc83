@@ -1,0 +1,24 @@
+server:
+   port: 80
+   
+spring:
+   application:
+      name: crzuul
+      
+      
+zuul:
+   routs:
+      #路由名 == 服务名
+      base:
+         path: /simple/163
+         url: http://www.163.com
+         
+      index:
+         url: /index/**
+         serviceId: crinedx
+         
+#解决zuul网关报错的问题
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
+ribbon:
+   ConnectTimeout: 3000
+   ReadTimeout: 60000	

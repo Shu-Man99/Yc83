@@ -1,0 +1,39 @@
+# yml 文件不能使用制表符空格tab,只能使用普通空格表示缩进
+# 设置值使用 空格（值）
+server:
+  .port: 8080
+  
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1/c85-s2-ply-damai?serverTimezone=UTC&CharacterEncoding=UTF-8&useSSL=false
+    username: root
+    password: a
+    driver-class-name: com.mysql.jdbc.Driver
+  mail:
+     #邮箱服务器地址
+     host: smtp.qq.com
+     #用户名
+     username: 2102133143@qq.com
+     #密码
+     password:
+     default-encoding: UTF-8
+    
+#日志配置
+logging:
+  level:
+    com:
+      yc:
+        c83s3psmspringboot:
+          dao: debug
+          web: warn
+
+#邮件发送
+mail:
+  fromMail:
+    addr: 2102133143@qq.com
+  
+# 开启驼峰命名
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+
