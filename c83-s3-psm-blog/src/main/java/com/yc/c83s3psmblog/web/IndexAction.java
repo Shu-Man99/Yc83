@@ -17,15 +17,18 @@ public class IndexAction {
 	private ArticleMapper amapper;
 	
 	//@RequestParam(defaultValue = "1") int page
+//	@GetMapping("/")
+//	public String index(Model m,@RequestParam(defaultValue = "1") int page) {
+//		PageHelper.startPage(page,5);
+//		m.addAttribute("alist", amapper.selectByNew());
+//		return "index";
+//	}
+//	
 	@GetMapping("/")
 	public String index(Model m,@RequestParam(defaultValue = "1") int page) {
+		//在执行查询方法前，调用分页参数设置
 		PageHelper.startPage(page,5);
-		m.addAttribute("alist", amapper.selectByNew());
-		return "index";
-	}
-	
-	@GetMapping("/aa")
-	public String index() {
+		m.addAttribute("alist",amapper.selectByNew());
 		return "index";
 	}
 	

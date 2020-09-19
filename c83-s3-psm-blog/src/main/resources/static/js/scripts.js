@@ -122,7 +122,7 @@ var page = 1;
 $(function(){
 	var ias = jQuery.ias({
 		// 动态加载内容的容器标签, 放置 article 的容器
-		container : '.content',
+		container : '#focusslide',
 		// 动态加载项目 ==> 每个文章的标签 : article
 		item : '.post',
 		// 分页标签
@@ -144,10 +144,7 @@ $(function(){
 	    offset: 5 // 第几页后开始
 	}));
 });
-      <div id="pagination">
-			<a href="/" class="next">next</a>
-		</div>
-
+      
 		
 //无限滚动反翻页
 jQuery.ias({
@@ -228,12 +225,12 @@ $(window).scroll(function () {
 })();
 
 /*禁止键盘操作*/
-document.onkeydown=function(event){
+/*document.onkeydown=function(event){
 	var e = event || window.event || arguments.callee.caller.arguments[0];
 	if((e.keyCode === 123) || (e.ctrlKey) || (e.ctrlKey) && (e.keyCode === 85)){
 		return false;
 	}
-}; 
+};*/ 
 
 /*文章评论*/
 $(function(){
