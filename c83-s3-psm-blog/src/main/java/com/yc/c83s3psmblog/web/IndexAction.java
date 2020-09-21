@@ -37,4 +37,8 @@ public class IndexAction {
 		m.addAttribute("article", amapper.selectById(id));
 		return "article";
 	}
+	@GetMapping("addArticle")
+	public String addArticle() {
+		return "addArticle";
+	}
 }
