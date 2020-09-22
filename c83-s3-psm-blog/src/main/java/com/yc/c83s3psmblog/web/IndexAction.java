@@ -31,14 +31,4 @@ public class IndexAction {
 		m.addAttribute("alist",amapper.selectByNew());
 		return "index";
 	}
-	
-	@GetMapping("article")
-	public String article(int id,Model m) {
-		m.addAttribute("article", amapper.selectById(id));
-		return "article";
-	}
-	@GetMapping("addArticle")
-	public String addArticle() {
-		return "addArticle";
-	}
 }

@@ -20,6 +20,7 @@ import com.yc.c83s3psmblog.bean.Result;
 import com.yc.c83s3psmblog.bean.User;
 import com.yc.c83s3psmblog.biz.BizException;
 import com.yc.c83s3psmblog.biz.UserBiz;
+import com.yc.c83s3psmblog.util.Utils;
 
 @Controller  //默认控制器方法是执行页面跳转
 public class UserAction {
@@ -34,7 +35,7 @@ public class UserAction {
 	public String register(@Valid User user,Errors errors,Model m) {
 		
 		if(errors.hasErrors()) {
-			m.addAttribute("errors",asMap(errors));
+			m.addAttribute("errors",Utils.asMap(errors));
 			m.addAttribute("user",user);
 			return "reg";
 		}
@@ -43,7 +44,7 @@ public class UserAction {
 		} catch (BizException e) {
 			e.printStackTrace();
 			errors.rejectValue("account", "account",e.getMessage());
-			m.addAttribute("errors",asMap(errors));
+			m.addAttribute("errors",Utils.asMap(errors));
 			m.addAttribute("user",user);
 			return "reg";
 		}
@@ -75,15 +76,4 @@ public class UserAction {
 		}
 	}
 	
-	private Map<String,String> asMap(Errors errors){
-		if(errors.hasErrors()) {
-			Map<String,String> ret =new HashMap<String,String>();
-			for(FieldError fe : errors.getFieldErrors()) {
-				ret.put(fe.getField(),fe.getDefaultMessage());
-			}
-			return ret;
-		}else {
-			return null;
-		}
-	}
 }

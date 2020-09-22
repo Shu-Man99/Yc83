@@ -7,3 +7,11 @@ spring:
     username: root
     password: a
     driver-class-name: com.mysql.jdbc.Driver
+
+    
+    
+logging:
+   level:
+      com:
+         yc:
+            c83s3psmblog: debug
