@@ -1,6 +1,5 @@
 package com.yc.c83s3psmblog.web;
 
-import java.io.PrintWriter;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -23,7 +22,7 @@ public class LoginInterceptor implements HandlerInterceptor{
 					if(accept.startsWith("application/json")) {
 						// ajax 请求
 						response.setContentType("application/json;charset=utf-8");
-						response.getWriter().append("{code:0,msg:'请先登录系统'}");
+						response.getWriter().append("{\"code\":\"0\",\"msg\":\"请先登录系统\"}");
 					} else {
 						// 页面跳转请求
 						//((PrintWriter) response).write("<script>alert('对话框上提示的内容')</script>");

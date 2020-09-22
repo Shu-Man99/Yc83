@@ -26,7 +26,7 @@ public class C83S3PsmBlogApplication implements WebMvcConfigurer{
 	public void addInterceptors(InterceptorRegistry registry) {
 		WebMvcConfigurer.super.addInterceptors(registry);
 		InterceptorRegistration ir = registry.addInterceptor(new LoginInterceptor());
-		ir.addPathPatterns("/toAddArticle","/addArticle.do");
+		ir.addPathPatterns("/toAddArticle","/addArticle.do","/comment");
 	}
 
 }
